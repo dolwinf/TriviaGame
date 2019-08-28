@@ -78,37 +78,41 @@ var array = [
 		answer: "Buddhism"
 	}
 ];
-var time = 30;
+var time = 1;
+var nextQuestion = 0;
+
 var timerDiv = $("#timer");
 var table = $("#table");
 timerDiv.append("<h1>Time remaining:" + time + "</h1>");
 
-function clearTable() {
+function newQuestion() {
+	var question = array[nextQuestion].question;
+	var options = array[nextQuestion].options;
+	var answer = array[nextQuestion].answer;
 	table.empty();
-}
+	table.append("<p>" + question + "</p>");
 
-function showQuestion() {
-	for (i = 0; i < array.length; i++) {
-		var question = array[i].question;
-		var options = array[i].options;
-		var answer = array[i].answer;
-
-		table.append("<p>" + question + "</p>");
-
-		options.forEach(function(item) {
-			table.append("<p>" + item + "</p>");
-		});
-	}
+	options.forEach(function(item) {
+		table.append("<p>" + item + "</p>");
+	});
 }
 
 function timer() {
-	if (time !== 0) {
+	if (time !== 0 && nextQuestion < 11) {
 		time--;
 		timerDiv.empty();
 		timerDiv.append("<h1>Time remaining:" + time + "</h1>");
 	} else {
 		timerDiv.empty();
 		timerDiv.append("<h1>Time up! </h1>");
+		time = 1;
+		nextQuestion++;
+		if (nextQuestion < 11) {
+			newQuestion();
+		} else {
+			table.empty();
+			table.append("<p>Game over!</p>");
+		}
 	}
 }
 
