@@ -6,7 +6,7 @@ var array = [
   },
 
   {
-    question: "What is the estimated population of Australia as of 2019",
+    question: "What is the estimated population of Australia as of 2019?",
     options: ["10 million", "20 million", "25 million", "60 million"],
     answer: "25 million"
   },
@@ -20,7 +20,7 @@ var array = [
 
   {
     question:
-      "Which prime minister from the UK joined the war on terror with President Bush in 2001",
+      "Which prime minister from the UK joined the war on terror with President Bush in 2001?",
     options: [
       "Tony Blair",
       "Boris Johnson",
@@ -31,7 +31,7 @@ var array = [
   },
 
   {
-    question: "What is the capital of Angola",
+    question: "What is the capital of Angola?",
     options: ["Bengo", "Luanda", "Cabinda", "Cuando Cubango"],
     answer: "Luanda"
   },
@@ -50,7 +50,7 @@ var array = [
   },
 
   {
-    question: "Who was the first non-caucasian president of the United States",
+    question: "Who was the first non-caucasian president of the United States?",
     options: [
       "Barack Obama",
       "Hillary Clinton",
@@ -61,7 +61,7 @@ var array = [
   },
 
   {
-    question: "Which of these countries is not in South America",
+    question: "Which of these countries is not in South America?",
     options: ["Brazil", "Argentina", "Portugal", "Chile"],
     answer: "Portugal"
   },
@@ -103,9 +103,6 @@ function displayNewQuestion() {
         "</li>"
     );
   });
-}
-
-function checkAnswer() {
   $("li").on("click", function() {
     console.log("clicked");
   });
@@ -135,5 +132,7 @@ function timer() {
     }
   }
 }
+
+displayNewQuestion();
 
 setInterval(timer, 1000);
