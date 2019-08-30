@@ -9,3 +9,11 @@
   font-size: 2em;
   font-weight: 350;
 }
+
+.startGame {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.center {
+  text-align: center;
+}

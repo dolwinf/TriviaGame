@@ -80,7 +80,10 @@ var array = [
 ];
 var time = 5;
 var nextQuestion = 0;
+var correctAnswers = 0;
+var wrongAnswers = 0;
 
+var startGame = $(".startGame");
 var timerDiv = $("#timer");
 var table = $("#table");
 timerDiv.append(
@@ -133,6 +136,8 @@ function timer() {
   }
 }
 
-displayNewQuestion();
+startGame.on("click", function() {
+  displayNewQuestion();
 
-setInterval(timer, 1000);
+  setInterval(timer, 1000);
+});
