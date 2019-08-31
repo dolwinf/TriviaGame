@@ -82,6 +82,7 @@ var time = 30;
 var nextQuestion = 0;
 var correctAnswers = 0;
 var wrongAnswers = 0;
+var unAnswered = 11;
 
 var startGame = $(".startGame");
 var timerDiv = $("#timer");
@@ -161,9 +162,18 @@ function timer() {
 			table.append(
 				"<p class='results'>Wrong Answers: " + wrongAnswers + "</p>"
 			);
+			if (correctAnswers + wrongAnswers !== 11) {
+				var checkAnswers = correctAnswers + wrongAnswers;
+				unAnswered = 11 - checkAnswers;
+			}
+			table.append(
+				"<p class='results'>Unanswered Questions: " + unAnswered + "</p>"
+			);
+
 			table.append(
 				"<button class='btn btn-primary restartGame'>Restart Game</button>"
 			);
+
 			$(".restartGame").on("click", function() {
 				window.location.reload();
 			});
