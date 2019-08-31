@@ -1,19 +1,29 @@
 .mainTitle {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 5em;
-  font-weight: 550;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 5em;
+	font-weight: 550;
 }
 
 .questions {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 2em;
-  font-weight: 350;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	font-size: 2em;
+	font-weight: 350;
 }
 
 .startGame {
-  font-family: "Courier New", Courier, monospace;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.restartGame {
+	font-family: "Courier New", Courier, monospace;
 }
 
 .center {
-  text-align: center;
+	text-align: center;
+}
+
+.results {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 30px;
+	font-weight: 500;
 }
