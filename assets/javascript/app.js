@@ -82,15 +82,12 @@ var time = 30;
 var nextQuestion = 0;
 var correctAnswers = 0;
 var wrongAnswers = 0;
-var unAnswered = 0;
 
 var startGame = $(".startGame");
 var timerDiv = $("#timer");
 var table = $("#table");
 timerDiv.append(
-	"<h1 class='questions' style='color:#6A6AE9'>Time remaining: " +
-		time +
-		" </h1>"
+	"<h1 class='questions' style='color:#6A6AE9'>Welcome to the Quiz. You'll be given 11 questions with a 30 second time frame to answer each question. Let's see what you've got. Click the Start Game button to proceed. </h1>"
 );
 
 function displayNewQuestion() {
@@ -110,7 +107,6 @@ function displayNewQuestion() {
 	$("li").on("click", function(e) {
 		if (e.currentTarget.innerHTML === answer) {
 			correctAnswers++;
-			// nextQuestion++;
 
 			displayNewQuestion();
 			time = 0;
@@ -122,7 +118,6 @@ function displayNewQuestion() {
 			);
 		} else {
 			wrongAnswers++;
-			// nextQuestion++;
 
 			displayNewQuestion();
 			time = 0;
@@ -138,9 +133,7 @@ function displayNewQuestion() {
 			"Correct answers",
 			correctAnswers,
 			"Wrong answers",
-			wrongAnswers,
-			"Unanswered",
-			unAnswered
+			wrongAnswers
 		);
 	});
 }
@@ -180,6 +173,11 @@ function timer() {
 }
 
 startGame.on("click", function() {
+	timerDiv.html(
+		"<h1 class='questions' style='color:#6A6AE9'>Time remaining: " +
+			time +
+			" </h1>"
+	);
 	$(".startGame").remove();
 	displayNewQuestion();
 
