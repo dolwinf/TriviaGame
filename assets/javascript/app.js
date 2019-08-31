@@ -82,7 +82,7 @@ var time = 30;
 var nextQuestion = 0;
 var correctAnswers = 0;
 var wrongAnswers = 0;
-var unAnswered = 11;
+var unAnswered = 0;
 
 var startGame = $(".startGame");
 var timerDiv = $("#timer");
