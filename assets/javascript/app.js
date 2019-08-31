@@ -78,7 +78,7 @@ var array = [
 		answer: "Buddhism"
 	}
 ];
-var time = 5;
+var time = 30;
 var nextQuestion = 0;
 var correctAnswers = 0;
 var wrongAnswers = 0;
@@ -155,7 +155,7 @@ function timer() {
 				" </h1>"
 		);
 	} else {
-		time = 5;
+		time = 30;
 		nextQuestion++;
 		if (nextQuestion < 11) {
 			displayNewQuestion();
@@ -180,6 +180,7 @@ function timer() {
 }
 
 startGame.on("click", function() {
+	$(".startGame").remove();
 	displayNewQuestion();
 
 	setInterval(timer, 1000);
